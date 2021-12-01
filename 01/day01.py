@@ -20,10 +20,10 @@ def part1(data: list) -> int:
 
 # Part 2
 def part2(data: list) -> int:
-    base = int(data[0]) + int(data[1]) + int(data[2])
+    base = sum(map(lambda x: int(x), data[0:3]))
     counter = 0
     for i in range(1, len(data)-2):
-        window = int(data[i]) + int(data[i+1]) + int(data[i+2])
+        window = sum(map(lambda x: int(x), data[i:i+3]))
         if base < window:
             counter += 1
         
